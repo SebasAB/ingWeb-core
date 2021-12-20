@@ -5,15 +5,17 @@ export default (books = [], action) => {
       break;
 
     case "CREATE":
-      return [ ...books, action.payload ]
+      return [...books, action.payload];
       break;
 
     case "UPDATE":
-      return books.map((book) => book._id === action.payload._id ? action.payload : book )
+      return books.map((book) =>
+        book._id === action.payload._id ? action.payload : book
+      );
       break;
 
     case "DELETE":
-      return books.filter((book) => book._id !== action.payload) 
+      return books.filter((book) => book._id !== action.payload);
       break;
 
     default:

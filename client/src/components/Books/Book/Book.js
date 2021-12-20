@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
 import {
   Card,
   CardActions,
@@ -10,22 +10,22 @@ import {
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
-import { deleteBook } from '../../../actions/books'
+import { deleteBook } from "../../../actions/books";
 
 import useStyles from "./styles";
 const Book = ({ book, setCurrentId }) => {
   const classes = useStyles();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {book.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="primary">
           {book.author}
         </Typography>
-        <Typography variant="subtitle1" color="text.secondary">
+        <Typography variant="subtitle1" color="primary">
           {book.genre}
         </Typography>
       </CardContent>
@@ -34,7 +34,9 @@ const Book = ({ book, setCurrentId }) => {
         <Button size="small" onClick={() => setCurrentId(book._id)}>
           Update
         </Button>
-        <Button size="small" onClick={() => dispatch(deleteBook(book._id))} >Delete</Button>
+        <Button size="small" onClick={() => dispatch(deleteBook(book._id))}>
+          Delete
+        </Button>
       </CardActions>
     </Card>
   );

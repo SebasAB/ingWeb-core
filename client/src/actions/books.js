@@ -9,29 +9,29 @@ export const getBooks = () => async (dispatch) => {
   }
 };
 
-export const createBook = (book) => async(dispatch) => {
+export const createBook = (book) => async (dispatch) => {
   try {
-    const { data } = await api.createBook(book)
-    dispatch({ type: "CREATE", payload: data})
+    const { data } = await api.createBook(book);
+    dispatch({ type: "CREATE", payload: data });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
-export const updateBook = (id, book) => async(dispatch) => {
+export const updateBook = (id, book) => async (dispatch) => {
   try {
-    const { data } = await api.updateBook(id, book)
-    dispatch({ type: "UPDATE", payload: data })
+    const { data } = await api.updateBook(id, book);
+    dispatch({ type: "UPDATE", payload: data });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
-export const deleteBook = (id) => async(dispatch) => {
+export const deleteBook = (id) => async (dispatch) => {
   try {
-    await api.deleteBook(id)
-    dispatch({ type: 'DELETE', payload: id })
+    await api.deleteBook(id);
+    dispatch({ type: "DELETE", payload: id });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
