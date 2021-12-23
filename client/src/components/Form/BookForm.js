@@ -41,16 +41,16 @@ const BookForm = ({ currentId, setCurrentId }) => {
     } else {
       dispatch(createBook(bookData));
     }
-    clear()
+    clear();
   };
 
   const clear = () => {
-    setCurrentId(null)
+    setCurrentId(null);
     setBookData({
       title: "",
       author: "",
       genre: "",
-    })
+    });
   };
 
   return (
@@ -61,7 +61,9 @@ const BookForm = ({ currentId, setCurrentId }) => {
         className={`${classes.form} ${classes.root}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">{!currentId ? 'Create ' : 'Edit '}a book</Typography>
+        <Typography variant="h6">
+          {!currentId ? "Create " : "Edit "}a book
+        </Typography>
         <TextField
           name="title"
           variant="outlined"
@@ -101,7 +103,7 @@ const BookForm = ({ currentId, setCurrentId }) => {
           type="submit"
           fullWidth
         >
-          {!currentId ? 'Create ' : 'Edit '}a book
+          {!currentId ? "Create " : "Edit "}a book
         </Button>
         <Button
           variant="contained"

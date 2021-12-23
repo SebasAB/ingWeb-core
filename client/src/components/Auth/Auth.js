@@ -17,6 +17,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 import { signIn, signUp } from "../../actions/auth";
 
+import { createShelf } from "../../actions/shelfs";
+
 import useStyles from "./styles";
 import Input from "./Input";
 
@@ -41,6 +43,7 @@ const Auth = () => {
     e.preventDefault();
     if (isSignUp) {
       dispatch(signUp(formData, history));
+      dispatch(createShelf({ owner: formData.email }));
     } else {
       dispatch(signIn(formData, history));
     }

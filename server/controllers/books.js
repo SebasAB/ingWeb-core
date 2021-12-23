@@ -15,8 +15,6 @@ export const getBooks = async (req, res) => {
 export const createBook = async (req, res) => {
   const book = req.body;
 
-  //const newBook = new Book({...book, "creator": req.user_id})
-
   const newBook = new Book(book);
 
   try {

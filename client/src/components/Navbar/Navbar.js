@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const history = useNavigate();
 
-  const location = useLocation()
+  const location = useLocation();
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
@@ -30,6 +30,24 @@ const Navbar = () => {
   return (
     <AppBar position="static" color="inherit" className={classes.appBar}>
       <div className={classes.brandContainer}>
+        <Typography
+          component={Link}
+          to="/shelf"
+          variant="h2"
+          align="center"
+          className={classes.heading}
+        >
+          Shelf&nbsp;
+        </Typography>
+        <Typography
+          component={Link}
+          to="/challenges"
+          variant="h2"
+          align="center"
+          className={classes.heading}
+        >
+          Challenges&nbsp;
+        </Typography>
         <Typography
           component={Link}
           to="/"
