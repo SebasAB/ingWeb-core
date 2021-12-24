@@ -1,12 +1,15 @@
 export default (shelfs = [], action) => {
   switch (action.type) {
-    case "FETCH_ALL":
+    case "GET_SHELF":
       return action.payload;
       break;
 
-    case "CREATE":
+    case "CREATE_SHELF":
       return action.payload;
       break;
+
+    case "ADD_BOOK":
+      return action.payload;
 
     default:
       return shelfs;

@@ -1,10 +1,10 @@
 export default (challenges = [], action) => {
   switch (action.type) {
-    case "FETCH_ALL":
+    case "FETCH_ALL_CHALLENGES":
       return action.payload;
       break;
 
-    case "CREATE":
+    case "CREATE_CHALLENGE":
       return [...challenges, action.payload];
       break;
 

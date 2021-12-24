@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Card,
   CardActions,
@@ -12,10 +12,25 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 import { deleteBook } from "../../../actions/books";
 
+import { updateShelf } from "../../../actions/shelfs";
+
 import useStyles from "./styles";
 const Book = ({ book, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  const email = user.result.email;
+
+  const bookId = book._id;
+  console.log(bookId);
+
+  const addToShelf = () => {
+    console.log("addToShelf");
+    dispatch(updateShelf(email, { book: bookId }));
+  };
+
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -30,7 +45,9 @@ const Book = ({ book, setCurrentId }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Add to shelf</Button>
+        <Button size="small" onClick={addToShelf}>
+          Add to shelf
+        </Button>
         <Button size="small" onClick={() => setCurrentId(book._id)}>
           Update
         </Button>

@@ -21,10 +21,6 @@ export const getShelfs = async (req, res) => {
 export const createShelf = async (req, res) => {
   const shelf = req.body;
 
-  console.log(shelf);
-  console.log(shelf.owner);
-  console.log(shelf.body);
-
   const newShelf = new Shelf(shelf);
 
   try {
@@ -35,10 +31,30 @@ export const createShelf = async (req, res) => {
         return false;
       }
     }
-    console.log("shelf created");
     await newShelf.save();
     res.status(201).json(newShelf);
   } catch (error) {
     res.status(409).json({ message: error.message });
+  }
+};
+
+export const updateShelf = async (req, res) => {
+  const { email } = req.params;
+  const { book } = req.body;
+  const date = new Date();
+  try {
+    const query = { owner: email };
+    const updateBooks = {
+      $push: { books: book },
+    };
+    const updateDates = {
+      $push: { datesAdded: date },
+    };
+    const updatedShelf = await Shelf.updateOne(query, updateBooks);
+    await Shelf.updateOne(query, updateDates);
+    res.status(200).json(updatedShelf);
+  } catch (error) {
+    res.status(500).json({ message: error });
+    console.log(error);
   }
 };

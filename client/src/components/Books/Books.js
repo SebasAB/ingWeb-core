@@ -9,8 +9,6 @@ import useStyles from "./styles";
 const Books = ({ setCurrentId }) => {
   const books = useSelector((state) => state.books);
   const classes = useStyles();
-
-  console.log(books);
   return !books.length ? (
     <CircularProgress />
   ) : (
