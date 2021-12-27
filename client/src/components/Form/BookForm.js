@@ -35,7 +35,7 @@ const BookForm = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log("creating book");
     if (currentId) {
       dispatch(updateBook(currentId, bookData));
     } else {

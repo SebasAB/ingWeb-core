@@ -43,3 +43,6 @@ export const fetchShelfs = (email) => API.get(`/shelfs/${email}`);
 export const createShelf = (shelfInfo) => API.post("/shelfs", shelfInfo);
 
 export const updateShelf = (email, book) => API.patch(`/shelfs/${email}`, book);
+
+export const deleteFromShelf = (email, book) =>
+  API.delete(`/shelfs/${email}/${book}`);

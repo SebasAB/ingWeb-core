@@ -3,12 +3,8 @@ import mongoose from "mongoose";
 const shelfSchema = mongoose.Schema({
   owner: String,
   books: {
-    type: [String],
-    default: [],
-  },
-  datesAdded: {
-    type: [Date],
-    default: [],
+    bookID: String,
+    dateAdded: Date,
   },
 });
 

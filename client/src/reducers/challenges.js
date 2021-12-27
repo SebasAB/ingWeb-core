@@ -1,6 +1,6 @@
 export default (challenges = [], action) => {
   switch (action.type) {
-    case "FETCH_ALL_CHALLENGES":
+    case "GET_ALL_CHALLENGES":
       return action.payload;
       break;
 

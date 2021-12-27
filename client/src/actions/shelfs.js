@@ -1,8 +1,8 @@
 import * as api from "../api";
 
-export const getShelf = () => async (dispatch) => {
+export const getShelf = (email) => async (dispatch) => {
   try {
-    const { data } = await api.fetchShelfs();
+    const { data } = await api.fetchShelfs(email);
     dispatch({ type: "GET_SHELF", payload: data });
   } catch (error) {
     console.log(error);
@@ -24,4 +24,13 @@ export const updateShelf = (email, book) => async (dispatch) => {
     const { data } = await api.updateShelf(email, book);
     dispatch({ type: "ADD_BOOK", payload: data });
   } catch (error) {}
+};
+
+export const deleteFromShelf = (email, book) => async (dispatch) => {
+  try {
+    const { data } = await api.deleteFromShelf(email, book);
+    dispatch({ type: "DELETE_FROM_SHELF", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
 };

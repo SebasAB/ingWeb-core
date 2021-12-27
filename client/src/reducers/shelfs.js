@@ -5,10 +5,13 @@ export default (shelfs = [], action) => {
       break;
 
     case "CREATE_SHELF":
-      return action.payload;
+      return shelfs;
       break;
 
     case "ADD_BOOK":
+      return shelfs;
+
+    case "DELETE_FROM_SHELF":
       return action.payload;
 
     default:

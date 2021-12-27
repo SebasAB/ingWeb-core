@@ -3,7 +3,7 @@ import * as api from "../api";
 export const getChallenges = () => async (dispatch) => {
   try {
     const { data } = await api.getChallenges();
-    dispatch({ type: "FETCH_ALL", payload: data });
+    dispatch({ type: "GET_ALL_CHALLENGES", payload: data });
   } catch (error) {
     console.log(error);
   }

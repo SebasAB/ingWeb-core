@@ -8,7 +8,12 @@ import useStyles from "./styles";
 
 const Books = ({ setCurrentId }) => {
   const books = useSelector((state) => state.books);
+  const state = useSelector((state) => state);
+
+  console.log(state);
+
   const classes = useStyles();
+
   return !books.length ? (
     <CircularProgress />
   ) : (
