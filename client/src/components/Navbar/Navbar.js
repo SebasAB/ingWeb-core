@@ -32,12 +32,12 @@ const Navbar = () => {
       <div className={classes.brandContainer}>
         <Typography
           component={Link}
-          to="/shelf"
+          to="/"
           variant="h2"
           align="center"
           className={classes.heading}
         >
-          Shelf&nbsp;
+          Books
         </Typography>
         <Typography
           component={Link}
@@ -47,15 +47,6 @@ const Navbar = () => {
           className={classes.heading}
         >
           Challenges&nbsp;
-        </Typography>
-        <Typography
-          component={Link}
-          to="/"
-          variant="h2"
-          align="center"
-          className={classes.heading}
-        >
-          Books
         </Typography>
       </div>
       <Toolbar className={classes.toolbar}>

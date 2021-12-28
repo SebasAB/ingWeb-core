@@ -34,18 +34,14 @@ const Book = ({ book, setCurrentId }) => {
   const bookId = book._id;
 
   const addToShelf = () => {
-    console.log("addToShelf");
     dispatch(updateShelf(email, { book: bookId }));
   };
 
   const removeFromShelf = () => {
-    console.log("deleting from shelf");
-    console.log(bookId);
     dispatch(deleteFromShelf(email, bookId));
   };
 
   const shelf = useSelector((state) => state.shelfs);
-  console.log(shelf);
 
   const isInShelf = () => {
     for (var i in shelf.books) {

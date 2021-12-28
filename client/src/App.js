@@ -7,7 +7,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Auth from "./components/Auth/Auth";
 import Challenges from "./components/Challenges/Challenges";
-import Shelf from "./components/Shelf/Shelf";
 
 const App = () => {
   return (
@@ -17,7 +16,6 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/auth" exact element={<Auth />} />
-          <Route path="/shelf" exact element={<Shelf />} />
           <Route path="/challenges" exact element={<Challenges />} />
         </Routes>
       </Container>
