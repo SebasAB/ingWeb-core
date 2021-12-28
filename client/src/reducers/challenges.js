@@ -5,8 +5,11 @@ export default (challenges = [], action) => {
       break;
 
     case "CREATE_CHALLENGE":
-      return [...challenges, action.payload];
+      return action.payload;
       break;
+
+    case "ADD_NEW_CHALLENGE":
+      return action.payload;
 
     default:
       return challenges;

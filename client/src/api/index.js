@@ -29,13 +29,6 @@ export const signIn = (formData) => API.post("/user/signin", formData);
 
 export const signUp = (formData) => API.post("/user/signup", formData);
 
-// challenges routes
-
-export const fetchChallenges = (email) => API.get(`/challenges/${email}`);
-
-export const createChallenge = (newChallenge) =>
-  API.post("/challenges", newChallenge);
-
 // shelfs routes
 
 export const fetchShelfs = (email) => API.get(`/shelfs/${email}`);
@@ -46,3 +39,12 @@ export const updateShelf = (email, book) => API.patch(`/shelfs/${email}`, book);
 
 export const deleteFromShelf = (email, book) =>
   API.delete(`/shelfs/${email}/${book}`);
+
+// challenges routes
+
+export const fetchChallenges = (email) => API.get(`/challenges/${email}`);
+
+export const createChallenge = (email) => API.post("/challenges", email);
+
+export const updateChallenges = (email, challengeInfo) =>
+  API.patch(`/challenges/${email}`, challengeInfo);

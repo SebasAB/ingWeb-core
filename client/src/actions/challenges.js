@@ -1,18 +1,27 @@
 import * as api from "../api";
 
-export const getChallenges = () => async (dispatch) => {
+export const getChallenges = (email) => async (dispatch) => {
   try {
-    const { data } = await api.getChallenges();
+    const { data } = await api.fetchChallenges(email);
     dispatch({ type: "GET_ALL_CHALLENGES", payload: data });
   } catch (error) {
     console.log(error);
   }
 };
 
-export const createChallenge = (challenge) => async (dispatch) => {
+export const createChallenge = (email) => async (dispatch) => {
   try {
-    const { data } = await api.createChallenge(challenge);
-    dispatch({ type: "CREATE", payload: data });
+    const { data } = await api.createChallenge(email);
+    dispatch({ type: "CREATE_CHALLENGE", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const addNewChallenge = (email, challenge) => async (dispatch) => {
+  try {
+    const { data } = await api.updateChallenges(email, challenge);
+    dispatch({ type: "ADD_NEW_CHALLENGE", payload: data });
   } catch (error) {
     console.log(error);
   }

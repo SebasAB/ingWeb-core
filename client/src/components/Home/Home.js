@@ -7,6 +7,7 @@ import BookForm from "../Form/BookForm";
 
 import { getBooks } from "../../actions/books";
 import { getShelf } from "../../actions/shelfs";
+import { getChallenges } from "../../actions/challenges";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Home = () => {
     dispatch(getBooks());
     if (user != null) {
       dispatch(getShelf(user.result.email));
+      dispatch(getChallenges(user.result.email));
     }
   }, [dispatch]);
 

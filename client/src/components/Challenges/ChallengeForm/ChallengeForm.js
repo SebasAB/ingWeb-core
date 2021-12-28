@@ -18,6 +18,8 @@ import {
 
 import useStyles from "./styles";
 
+import { addNewChallenge } from "../../../actions/challenges";
+
 const ChallengeForm = () => {
   const classes = useStyles();
 
@@ -38,11 +40,7 @@ const ChallengeForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("creating challenge");
-    // if () {
-    //   // dispatch(updateBook(currentId, bookData));
-    // } else {
-    //   // dispatch(createBook(bookData));
-    // }
+    dispatch(addNewChallenge(email, challengeData));
     clear();
   };
 

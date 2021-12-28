@@ -3,19 +3,12 @@ import mongoose from "mongoose";
 const challengeSchema = mongoose.Schema({
   owner: String,
   challenges: {
-    books: [String],
     category: String,
     categoryParameter: String,
     quantity: Number,
-    beginDate: {
-      type: Date,
-      default: new Date(),
-    },
+    beginDate: Date,
     endDate: Date,
-    progress: {
-      type: Number,
-      default: 0,
-    },
+    progress: Number,
   },
 });
 
