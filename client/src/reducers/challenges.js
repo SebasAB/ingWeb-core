@@ -8,8 +8,8 @@ export default (challenges = [], action) => {
       return action.payload;
       break;
 
-    case "ADD_NEW_CHALLENGE":
-      return action.payload;
+    // case "ADD_NEW_CHALLENGE":
+    //   return action.payload;
 
     default:
       return challenges;

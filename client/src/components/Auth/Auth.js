@@ -19,8 +19,6 @@ import { signIn, signUp } from "../../actions/auth";
 
 import { createShelf } from "../../actions/shelfs";
 
-import { createChallenge } from "../../actions/challenges";
-
 import useStyles from "./styles";
 import Input from "./Input";
 
@@ -46,7 +44,6 @@ const Auth = () => {
     if (isSignUp) {
       dispatch(signUp(formData, history));
       dispatch(createShelf({ owner: formData.email }));
-      dispatch(createChallenge({ owner: formData.email }));
     } else {
       dispatch(signIn(formData, history));
     }

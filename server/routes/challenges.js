@@ -3,13 +3,13 @@ import express from "express";
 import {
   getChallenges,
   createChallenge,
-  addNewChallenge,
+  // addNewChallenge,
 } from "../controllers/challenges.js";
 
 const router = express.Router();
 
 router.get("/:email", getChallenges);
 router.post("/", createChallenge);
-router.patch("/:email", addNewChallenge);
+// router.patch("/:email", addNewChallenge);
 
 export default router;

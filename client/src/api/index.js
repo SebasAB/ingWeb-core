@@ -44,7 +44,8 @@ export const deleteFromShelf = (email, book) =>
 
 export const fetchChallenges = (email) => API.get(`/challenges/${email}`);
 
-export const createChallenge = (email) => API.post("/challenges", email);
+export const createChallenge = (challenge) =>
+  API.post("/challenges", challenge);
 
-export const updateChallenges = (email, challengeInfo) =>
-  API.patch(`/challenges/${email}`, challengeInfo);
+// export const updateChallenges = (email, challengeInfo) =>
+//   API.patch(`/challenges/${email}`, challengeInfo);

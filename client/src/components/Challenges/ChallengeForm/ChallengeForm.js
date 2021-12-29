@@ -18,7 +18,7 @@ import {
 
 import useStyles from "./styles";
 
-import { addNewChallenge } from "../../../actions/challenges";
+import { createChallenge } from "../../../actions/challenges";
 
 const ChallengeForm = () => {
   const classes = useStyles();
@@ -34,13 +34,15 @@ const ChallengeForm = () => {
     category: "Quantity",
     categoryParameter: "",
     quantity: 0,
+    beginDate: new Date(),
     endDate: new Date(),
+    progress: 0,
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("creating challenge");
-    dispatch(addNewChallenge(email, challengeData));
+    dispatch(createChallenge(challengeData));
     clear();
   };
 
@@ -48,10 +50,12 @@ const ChallengeForm = () => {
     console.log("clearing");
     setChallengeData({
       owner: email,
-      category: "",
+      category: "Quantity",
       categoryParameter: "",
       quantity: 0,
+      beginDate: new Date(),
       endDate: new Date(),
+      progress: 0,
     });
   };
 
