@@ -65,8 +65,6 @@ const ChallengeForm = () => {
       : setIsQuantity(false);
   }, [challengeData]);
 
-  console.log(challengeData);
-
   return (
     <Paper className={classes.paper}>
       <form

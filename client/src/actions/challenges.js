@@ -17,12 +17,3 @@ export const createChallenge = (challenge) => async (dispatch) => {
     console.log(error);
   }
 };
-
-// export const addNewChallenge = (email, challenge) => async (dispatch) => {
-//   try {
-//     const { data } = await api.updateChallenges(email, challenge);
-//     dispatch({ type: "ADD_NEW_CHALLENGE", payload: data });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
