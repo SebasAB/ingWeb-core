@@ -25,6 +25,9 @@ const Challenge = ({ challenge }) => {
         <Typography variant="subtitle1" color="primary">
           Quantity: {challenge.quantity}
         </Typography>
+        <Typography variant="subtitle1" color="primary">
+          Progress: {challenge.progress}/{challenge.quantity}
+        </Typography>
       </CardContent>
       <CardActions>
         <Button size="small" onClick={deleteChallenge}>
